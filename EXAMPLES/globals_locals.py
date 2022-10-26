@@ -15,3 +15,27 @@ def eggs(fruit):  # function parameters are local
 
 
 eggs('mango')
+
+g = globals()
+print(f"g['spam']: {g['spam']}")
+print(f"g['ham']: {g['ham']}")
+
+g['color'] = 'blue'
+print(f"color: {color}")
+
+class Dog:
+    def bark(self):
+        print("woof woof")
+
+    def sniff(self):
+        print("sniff sniff snuff")
+
+d = Dog()
+print(f"dir(d): {dir(d)}")
+
+foo = [1, 2, 3]
+print(f"dir(foo): {dir(foo)}")
+
+
+
+

@@ -17,11 +17,12 @@ class RandomWord():  # define callable class to generate words
     def __init__(self):
         with open('../DATA/words.txt') as words_in:
             self._words = [word.rstrip('\n\r') for word in words_in.readlines()]
-        self._num_words = len(self._words)
 
     def __call__(self):
-        return self._words[random.randrange(0, self._num_words)]
+        return self._words[random.randrange(0, len(self))]
 
+    def __len__(self):
+        return len(self._words)
 
 class Worker(Thread):  # worker thread
 
@@ -33,7 +34,7 @@ class Worker(Thread):  # worker thread
         while True:
             try:
                 s1 = word_queue.get(block=False)  # get next item from thread
-                s2 = s1.upper() + '-' + s1.upper()
+                s2 = s1.upper()
                 with shared_list_lock:  # acquire lock, then release when done
                     shared_list.append(s2)
 

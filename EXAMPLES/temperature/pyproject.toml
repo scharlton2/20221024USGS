@@ -26,9 +26,11 @@ dependencies = [
 #[tool.setuptools]
 #packages=["temperature"]
 
-[project.scripts] 
+[project.scripts]
+#  these will be in PYTHON-PREFIX/bin or PYTHON-PREFIX\scripts
 c2f='temperature:convert._c2f_cli'
 f2c='temperature:convert._f2c_cli'
 
 [project.urls]
 "Homepage" = "https://github.com/jstrickler/20221024USGS"
+

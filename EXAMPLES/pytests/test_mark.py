@@ -8,8 +8,13 @@ def test_one():
 def test_two():
     assert 1
 
+@pytest.mark.alpha
 @pytest.mark.beta  # Mark with label beta
 def test_three():
+    assert 1
+
+@pytest.mark.gamma
+def test_four():
     assert 1
 
 if __name__ == '__main__':

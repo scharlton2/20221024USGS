@@ -1,6 +1,5 @@
 from datetime import date
 
-
 class President():
     def __init__(self, index):
         self._get_data(index)
@@ -22,7 +21,7 @@ class President():
         # You will no longer need the _mkdate() method
         with open("DATA/presidents.txt") as pfile:
             for line in pfile:
-                flds = line.split(":")
+                flds = line.rstrip().split(":")
                 if int(flds[0]) == int(index):
                     self._lname = flds[1]
 

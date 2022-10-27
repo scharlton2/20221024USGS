@@ -5,6 +5,8 @@ def main():
     # Create a 'context' -- start the parser, skipping all but specified tag
     doc = iterparse("../BIG_DATA/pubmed19n0001.xml", tag='PubmedArticle')
 
+    # for event, element in doc:
+    #     pass
     # Loop over each occurrence of tag ("end event").
     # Use enumerate() to count how many elements found
     for i, (event, element) in enumerate(doc, 1):

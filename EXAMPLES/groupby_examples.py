@@ -6,6 +6,9 @@ with open('../DATA/words.txt') as words_in:  # open file for reading
 
     g = groupby(all_words, key=lambda e: e[0])  # create a groupby() object where the key is the first character in the word
 
+    # for letter, word_list in g:
+    #     print(letter, len(list(word_list)))
+
     counts = {letter: len(list(wlist)) for letter, wlist in g}  # make a dictionary where the key is the first character, and the value is the number of words that start with that character; groupby groups all the words, then len() counts the number of words for that character
 
 sorted_letters = sorted(counts.items(), key=lambda e: e[1], reverse=True)  # sort the counts dictionary by value (i.e., number of words, not the letter itself) into a list of tuples

@@ -1,7 +1,7 @@
 
 
 class TrimmedFile:
-    def __init__(self, file_name):  # constructor is passed file name
+    def __init__(self, file_name, reverse=False):  # constructor is passed file name
         self._file_in = open(file_name)
 
     def __iter__(self):  # A generator must implement iter(), which must return an iterator. Typically it returns self, as the generator _is_ the iterator

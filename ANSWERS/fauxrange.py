@@ -17,7 +17,7 @@ class fauxrange:
 
     def __next__(self):
         next_value = self._start
-        if next_value > self._stop:
+        if next_value >= self._stop:
             raise StopIteration
 
         self._start += self._step
@@ -26,12 +26,13 @@ class fauxrange:
     def __iter__(self):
         return self
 
-r1 = fauxrange(10)
-print(list(r1))
+for num in fauxrange(5):  # next(gen-obj)
+    print(num)
+print()
 
-r2 = fauxrange(1, 11)
-print(list(r2))
+x = list(fauxrange(10))
 
-r3 = fauxrange(5, 101, 5)
-print(list(r3))
+fr = fauxrange(3)
+print(next(fr))
+print(next(fr))
 

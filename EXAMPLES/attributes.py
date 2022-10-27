@@ -1,5 +1,7 @@
 
 class Spam():
+    def __init__(self):
+        self.color = "blue"
 
     def eggs(self, msg):  # create attribute
         print("eggs!", msg)
@@ -8,10 +10,12 @@ class Spam():
 s = Spam()
 
 s.eggs("fried")
+print(s.color)
+
 
 print("hasattr()", hasattr(s, 'eggs'))  # check whether attribute exists
 
-e = getattr(s, 'eggs')  # retrieve attribute
+e = getattr(s, 'eggs')  # retrieve attribute   same as s.eggs
 e("scrambled")
 
 

@@ -12,11 +12,12 @@ if response.status_code == requests.codes.OK:  # check status code
         with open(saved_pdf_file, 'wb') as pdf_out:  # open local file
             pdf_out.write(response.content)  # write data to a local file in binary mode; response.content is data from URL
 
-        if sys.platform == 'win32':  # select platform and choose the app to open the PDF file
-            cmd = saved_pdf_file
-        elif sys.platform == 'darwin':
-            cmd = 'open ' + saved_pdf_file
-        else:
-            cmd = 'acroread ' + saved_pdf_file
+if __name__ == '__main__':
+    if sys.platform == 'win32':  # select platform and choose the app to open the PDF file
+        cmd = 'start ' +  saved_pdf_file
+    elif sys.platform == 'darwin':
+        cmd = 'open ' + saved_pdf_file
+    else:
+        cmd = 'acroread ' + saved_pdf_file
 
-        run(cmd.split())  # run requires command to be split into words
+    run(cmd.split())  # run requires command to be split into words

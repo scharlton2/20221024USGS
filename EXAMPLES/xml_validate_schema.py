@@ -10,6 +10,10 @@ BAD_PRES_XML_PATH = os.path.join(XML_BASE, 'presidents_bad.xml')
 pres_schema = etree.XMLSchema(file=PRES_SCHEMA_PATH) # create schema from schema (.xsd) file
 pres_parser = etree.XMLParser(schema=pres_schema) # create XML parser that uses schema
 
+# relaxng_doc = etree.parse(RELAXNG_SCHEMA_FILE)
+# relaxng_parser = etree.RelaxNG(relax_ng_doc)
+# doc = etree.parse(xml_path, parser=relaxng_parser)
+
 def validate(xml_path):
     try:
         pres_doc = etree.parse(xml_path, parser=pres_parser) # try to parse XML

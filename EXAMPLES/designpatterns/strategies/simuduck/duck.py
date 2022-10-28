@@ -10,7 +10,7 @@ class Duck(object):
             duck_type,
             quack=None,
             fly=None
-    ):
+        ):
         self._duck_type = duck_type
         self._quack_behavior = quacklib.Quack() if quack is None else quack
         self._fly_behavior = flylib.FlyWithWings() if fly is None else fly

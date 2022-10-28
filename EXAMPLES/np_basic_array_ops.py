@@ -43,3 +43,10 @@ print("a.cumprod(): {}".format(a.cumprod()))
 print()
 a += 1000  # add 1000 to every element of a (in place)
 print(a)
+
+def c2f(cel):
+    return (9/5 * cel) + 32
+
+f_temps = c2f(a)
+print(f_temps)
+

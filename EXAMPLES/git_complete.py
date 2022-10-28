@@ -1,16 +1,19 @@
 import os
 import shutil
 from git import Git, Repo
+home_dir = os.path.expanduser('~')
 
-repo_dir = 'newproject'
+repo_dir = os.path.join(home_dir, 'myproject')
 
 r = Repo.init(repo_dir)  # Create new empty repo
+
+file_to_add = 'creating_classes.py'
+shutil.copy(file_to_add, repo_dir)  # Copy file to add (typically created with IDE, so no need to copy)
+
 os.chdir(repo_dir)
 
-file_to_add = 'creating_dicts.py'
-g = Git(r)  # Create Git() object from repo
-shutil.copy('../' + file_to_add, ".")  # Copy file to add (typically created with IDE, so no need to copy)
+repo = Git(r)
 
-g.add(file_to_add)  # Stage file for commit
-g.commit(file_to_add, message="initial commit")  # Commit file
-print(g.log())  # Show repo log
+repo.add(file_to_add)  # Stage file for commit
+repo.commit(file_to_add, message="initial commit")  # Commit file
+print(repo.log())  # Show repo log

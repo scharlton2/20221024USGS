@@ -9,7 +9,9 @@ def main():
 
     np.source(ff.fft)  # View the source of the fft() function
 
+    print('-' * 60)
 
+    np.lookfor('linear')
 
 
 if __name__ == '__main__':

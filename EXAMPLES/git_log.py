@@ -1,7 +1,8 @@
 import os
 from git import Git, Repo
 
-repo_dir = 'myproject'
+home_dir = os.path.expanduser('~')
+repo_dir = os.path.join(home_dir, 'myproject')
 
 repo = Repo(repo_dir)
 

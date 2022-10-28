@@ -32,3 +32,15 @@ powers = ((i, i ** 2, i ** 3) for i in range(1, 11))
 for num, square, cube in powers:
     print("{:2d} {:3d} {:4d}".format(num, square, cube))
 print()
+
+powers = ((i, i ** 2, i ** 3) for i in range(10, -1, -1))
+print(f"powers: {powers}")
+for p in powers:
+    print(p)
+
+powers = ((i, i ** 2, i ** 3) for i in range(10, -1, -1))
+for x in reversed(list(powers)):
+    print(x)
+
+
+

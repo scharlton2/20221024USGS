@@ -30,7 +30,7 @@ if __name__ == '__main__':
     print(m[5, 2, 0])  # Index with tuple
     print(m[:4])
     print(len(m))
-    print(m[5, ])
+    print(m[5,])
     print(m[:2, -2:])
     print()
     print(m)
@@ -40,3 +40,14 @@ if __name__ == '__main__':
     for fruit in m:
         print(fruit)
     print(len(fruit))
+
+fruits = ["pomegranate", "cherry", "apricot", "apple",
+"lemon", "kiwi", "orange", "lime", "watermelon", "guava",
+"papaya", "fig", "pear", "banana", "tamarind", "persimmon",
+"elderberry", "peach", "blueberry", "lychee", "grape", "date" ]
+
+
+flist = [f for i, f in enumerate(fruits) if i in (5, 2, 0)]   # vs.  m[5, 2, 0]
+print(f"fruits: {flist}")
+
+

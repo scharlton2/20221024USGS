@@ -17,6 +17,8 @@ Testing email from Python
 
 SMTP_USER = 'pythonclass'
 SMTP_PASSWORD = getpass("Enter SMTP server password:")  # get password (not echoed to screen)
+# smtp = smtplib.SMTP_SSL(...)
+# smtp.starttls()
 
 smtp = smtplib.SMTP("smtp2go.com", 2525)  # connect to SMTP server
 smtp.login(SMTP_USER, SMTP_PASSWORD)  # log into SMTP server
@@ -33,3 +35,28 @@ except smtplib.SMTPException as err:
     print("Unable to send mail:", err)
 finally:
     smtp.quit()  # disconnect from SMTP server
+
+
+"""
+import smtplib
+
+# initialize connection to our email server, we will use Outlook here
+smtp = smtplib.SMTP('smtp-mail.outlook.com', port='587')
+
+smtp.ehlo()  # send the extended hello to our server
+smtp.starttls()  # tell server we want to communicate with TLS encryption
+
+smtp.login('joe.bloggs@outlook.com', 'Password123')  # login to our email server
+
+# send our email message 'msg' to our boss
+smtp.sendmail('joe.bloggs@outlook.com',
+              'joes.boss@outlook.com',
+              msg.as_string())
+              
+smtp.quit()  # finally, don't forget to close the connection
+"""
+
+
+
+
+

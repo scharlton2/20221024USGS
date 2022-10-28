@@ -19,6 +19,9 @@ def main():
 
         print('-' * 60)
 
+        print("raw JASON:")
+        print(response.text)
+        print('-' * 60)
         print("raw DATA:")
         pprint(response.json())
     else:

@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 class MaxList(list):
-    def __init__(self, max_size):
+    def __init__(self, max_size, iterable=None):
         self._max_size = max_size
+        if iterable is not None:
+            super().__init__(iterable)
 
     def append(self, value):
         if len(self) == self._max_size:
@@ -27,3 +29,5 @@ if __name__ == '__main__':
     print(x)
     print(type(x))
 
+    biglist = MaxList(20, [1, 2, 3])
+    print(len(biglist))

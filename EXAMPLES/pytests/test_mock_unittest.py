@@ -1,7 +1,9 @@
 import pytest
 from unittest.mock import Mock
 
+HAM_VALUE = 42
 ham = Mock()  # Create mock version of ham() function
+ham.return_value = HAM_VALUE
 
 
 # system under test
@@ -18,9 +20,9 @@ class Spam():  # System (class) under test
 #     pass
 
 def test_spam_calls_ham():   # Actual unit test
-    _ = Spam(42)  # Create instance of Spam, which calls ham()
-    ham.assert_called_once_with(42)  # Check that spam.value correctly returns return value of ham()
-
+    s = Spam(HAM_VALUE)  # Create instance of Spam, which calls ham()
+    ham.assert_called_once_with(HAM_VALUE)  # Check that spam.value correctly returns return value of ham()
+    assert s.value == HAM_VALUE
 
 if __name__ == '__main__':
     pytest.main([__file__])

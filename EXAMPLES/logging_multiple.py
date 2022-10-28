@@ -2,6 +2,8 @@ import sys
 import logging
 import logging.handlers
 from getpass import getpass
+from apple import apple
+from banana import banana
 
 # logging.basicConfig(level=logging.DEBUG, format="huh??")
 
@@ -26,7 +28,7 @@ file_handler.setFormatter(formatter)
 
 
 # log to email for CRITICAL
-smtp_password = getpass("smtp password: ")
+smtp_password = "Gr3@tStud3nt"
 
 email_handler = logging.handlers.SMTPHandler(
     ('smtp2go.com', 2525),
@@ -37,32 +39,34 @@ email_handler = logging.handlers.SMTPHandler(
 )
 email_handler.setLevel(logging.CRITICAL)
 
-testlogger = logging.getLogger('TestLogger')  # create Logger object
-testlogger.propagate = False # don't use default logger
+log = logging.getLogger()  # create root Logger object
+# testlogger.propagate = False # don't use default logger
 
-testlogger.addHandler(stream_handler)
-testlogger.addHandler(file_handler)
+log.addHandler(stream_handler)
+log.addHandler(file_handler)
 # testlogger.addHandler(email_handler)
 
-# list handlers
+# list handlers=
 print("HANDLERS:")
-for handler in testlogger.handlers:
+for handler in log.handlers:
     print(handler)
 print()
 
-testlogger.setLevel(logging.DEBUG)  # optional
+log.setLevel(logging.DEBUG)  # optional
 
-testlogger.debug("alpha")
-testlogger.info("beta")
-testlogger.warning("gamma")
-testlogger.error("delta")
-testlogger.critical("epsilon")
-testlogger.warning('zeta')
-testlogger.warning('eta')
-testlogger.critical("theta")
-testlogger.debug("iota")
-testlogger.error("kappa")
-testlogger.warning("lambda")
-testlogger.warning("mu")
-testlogger.warning("nu")
-testlogger.critical("rho")
+log.debug("alpha")
+log.info("beta")
+log.warning("gamma")
+log.error("delta")
+log.critical("epsilon")
+log.warning('zeta')
+log.warning('eta')
+log.critical("theta")
+log.debug("iota")
+log.error("kappa")
+log.warning("lambda")
+log.warning("mu")
+log.warning("nu")
+log.critical("rho")
+apple()
+banana()

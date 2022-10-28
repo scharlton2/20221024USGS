@@ -7,6 +7,8 @@ def next_prime(limit):
             continue
         for j in range(2 * i, limit + 1, i):
             flags.add(j)  # add non-prime elements to set
+
+        # provides value to next()
         yield i  # execution stops here until next value is requested by for-in loop
 
 

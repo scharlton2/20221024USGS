@@ -13,6 +13,7 @@ print()
 r3 = np.arange(1.0, 5.0, .3333333)  # start, stop, and step may be floats
 print(r3)
 print("size is", r3.size)
+print(f"r3.size: {r3.size}")
 print()
 
 r4 = np.linspace(1.0, 2.0, 10)  # 10 equal steps between 1.0 and 2.0

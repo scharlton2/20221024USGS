@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 data = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [20, 30, 40]]
 
 a = np.array(data)  # create array from nested sequences
@@ -9,7 +10,7 @@ print("a.shape (lengths of axes/dimensions):", a.shape)  # get shape
 print("a.size (number of elements in array):", a.size)
 print("a.itemsize (size of one item):", a.itemsize)
 print("a.nbytes (number of bytes used):", a.nbytes)
-
+print(f"sys.getsizeof(data): {sys.getsizeof(data)}")
 print()
 
 a_zeros = np.zeros((3, 5), dtype=np.uint32)  # create array of specified shape and datatype, initialized to zeroes

@@ -26,3 +26,5 @@ a2.shape = 2, 5, 4  # reshape go 2x5x4
 
 print(a2)
 print()
+
+print(a1.T)

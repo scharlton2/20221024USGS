@@ -4,6 +4,7 @@ sample_data = np.loadtxt(   # Read some data into 2d array
     "../DATA/columns_of_numbers.txt",
     skiprows=1,
 )
+print(f"sample_data.shape: {sample_data.shape}")
 
 print("first 5 rows of sample_data:")
 print(sample_data[:5, :], '\n')
